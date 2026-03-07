@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/";
       inputs.home-manager.follows = "home-manager";
     };
+    nixcord.url = "github:FlameFlag/nixcord";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
