@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports =
@@ -106,6 +106,11 @@
       user.email = "jaynicholasturner@gmail.com";
       init.defaultBranch = "main";
     };
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users.jay.imports = [ ./home.nix ];
   };
 
   # Allow unfree packages
