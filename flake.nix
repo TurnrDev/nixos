@@ -18,7 +18,7 @@
     nixosConfigurations.jay-framework = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        ./hosts/jay-framework/configuration.nix
         inputs.home-manager.nixosModules.default
         stylix.nixosModules.stylix
       ];
