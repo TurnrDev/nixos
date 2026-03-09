@@ -21,7 +21,6 @@
     '';
     settings = {
       "$mainMod" = "SUPER";
-      "$shiftMod" = "SUPER_SHIFT";
       "$altMod" = "SUPER+ALT";
       exec-once = [
         "uwsm app -- nm-applet"
@@ -37,8 +36,8 @@
         "$mainMod, Super_R, Launch Rofi, exec, uwsm app -- fuzzel"
         "$mainMod, Q, Close, killactive"
         "$mainMod, F, Fullscreen, fullscreen"
-        # "$shiftMod, F, Tiled fullscreen, layoutmsg, colresize 1"
-        #"$shiftMod, F, Fake fullscreen,fakefullscreen"
+        # "$altMod, F, Tiled fullscreen, layoutmsg, colresize 1"
+        #"$altMod, F, Fake fullscreen,fakefullscreen"
         "$altMod, Space, Toggle Floating, togglefloating"
         # "$mainMod, J, Toggle split, togglesplit" # hy3
         ", XF86AudioRaiseVolume, Raise Volume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
@@ -54,18 +53,18 @@
         # "$mainMod, F7, Spotify Media Previous, exec, playerctl --player=spotify previous"
         "$mainMod, mouse_down, Zoom In, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
         "$mainMod, mouse_up, Zoom Out, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float / 1.1) | if . < 1 then 1 else . end')"
-        "$shiftMod, mouse_up, Reset Zoom, exec, hyprctl -q keyword cursor:zoom_factor 1"
-        "$shiftMod, mouse_down, Reset Zoom, exec, hyprctl -q keyword cursor:zoom_factor 1"
-        "$shiftMod, minus, Reset Zoom, exec, hyprctl -q keyword cursor:zoom_factor 1"
+        "$altMod, mouse_up, Reset Zoom, exec, hyprctl -q keyword cursor:zoom_factor 1"
+        "$altMod, mouse_down, Reset Zoom, exec, hyprctl -q keyword cursor:zoom_factor 1"
+        "$altMod, minus, Reset Zoom, exec, hyprctl -q keyword cursor:zoom_factor 1"
         "$mainMod, O, Execute a fit operation, submap, fit-switch"
         "$mainMod, up, Move layout up, layoutmsg, move -col"
         "$mainMod, down, Move layout down, layoutmsg, move +col"
         "$mainMod, left, Move layout left, layoutmsg, move -col"
         "$mainMod, right, Move layout right, layoutmsg, move +col"
-        "$shiftMod, up, Move window left, layoutmsg, swapcol l"
-        "$shiftMod, down, Move window right, layoutmsg, swapcol r" 
-        "$shiftMod, left, Move window left, layoutmsg, swapcol l"
-        "$shiftMod, right, Move window right, layoutmsg, swapcol r"
+        "$altMod, up, Move window left, layoutmsg, swapcol l"
+        "$altMod, down, Move window right, layoutmsg, swapcol r" 
+        "$altMod, left, Move window left, layoutmsg, swapcol l"
+        "$altMod, right, Move window right, layoutmsg, swapcol r"
       ];
       binde = [
         "$mainMod, equal, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
